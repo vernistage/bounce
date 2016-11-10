@@ -19,6 +19,7 @@ end
 
 get '/statuses/mentions_timeline' do
   # Returns the 20 most recent mentions.
+  binding.pry
   @blocked_words = Word.all
   $client.mentions.each do |tweet|
     @blocked_words.each do |word|

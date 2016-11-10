@@ -1,0 +1,3 @@
+class UserWord < ActiveRecord::Base
+  # Remember to create a migration!
+end
