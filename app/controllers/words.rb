@@ -3,8 +3,8 @@ get '/words/new' do
 end
 
 post '/words' do
-  @word = Word.new(params[:blocked_word])
-  if @word.save
+  @blocked_words = word_parser(params['words'])
+  if @blocked_words.length > 0
     redirect '/'
   else
     @error = "something went wrong"
