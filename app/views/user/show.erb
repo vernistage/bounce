@@ -1,23 +1,31 @@
-<h4>You blocked the following words:</h4>
+<a href='/statuses/mentions_timeline'>
+<button type="button" class="btn btn-primary btn-lg btn-block">Proceed to your @mentions</button>
+</a>
 
-<div id="blocked-words-list">
-  <ul>
-    <% @user.blocked_words.each do |word_object| %>
-      <li><%= word_object.word %></li>
-    <% end %>
-  </ul>
+<div class="row">
+  <div id="blocked-words-list" class="col-md-6">
+    <h4>You blocked the following words:</h4>
+    <ul>
+      <% @user.blocked_words.each do |word_object| %>
+        <li>
+          <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
+          <%= word_object.word %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div id="muted-user-list" class="col-md-6">
+    <h4>Automatically muted by Bounce:</h4>
+    <ul>
+      <% @user.muted_accounts.each do |account| %>
+        <li>
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          @<%= account.twitter_handle %> | <a href='/tweets/<%= account.tweet.id %>' id='tweet-view'>see tweet</a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
-
-<div id="muted-user-list">
-  <h4>The following Twitter users were automatically muted by Bounce:</h4>
-  <ul>
-    <% @user.muted_accounts.each do |account| %>
-      <li>@<%= account.twitter_handle %> | <a href='/tweets/<%= account.tweet.id %>'>see tweet</a></li>
-    <% end %>
-  </ul>
-</div>
-
-<h4>Proceed to your mentions</h4>
-<a href='/statuses/mentions_timeline'><button type="button" class="btn btn-primary btn-lg btn-block">Twitter Time!</button></a>
 
 <h4><em>Proceed to your direct messages: Coming Soon</em></h4>

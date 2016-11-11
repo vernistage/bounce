@@ -1,21 +1,38 @@
+ul {
+  text-align: left;
+}
+
+h1 {
+  color: #337ab7;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 75px;
+}
+
+h2, h3, h4 {
+  color: #337ab7;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #E4F0FB;
+}
+
 .container {
   margin: 20px auto;
-  width: 600px;
+  width: 768px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border: 1px dotted #02294A;
   text-align: center;
+  background-color: white;
 }
 
 .body {
   margin: 20px auto;
-  width: 600px;
+  width: 768px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border: 1px dotted #02294A;
   text-align: left;
-}
-
-ul {
-  text-align: left;
+  background-color: white;
 }
 
 #item-edit-form {
@@ -48,5 +65,10 @@ div.bidding {
 }
 
 #muted-user-list ul{
-  list-style-image: url('sqpurple.gif');
+  list-style-type: none;
 }
+
+#show-tweet{
+  display: hide;
+}
+

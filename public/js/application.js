@@ -1,19 +1,26 @@
 $(document).ready(function() {
-  $("textarea").keyup(function() {
-    var charCount = $(this).val().length;
-    var textColor, buttonDisabled;
+  $('a#add-word-btn').click(function(event){
+    event.preventDefault();
+    var self = $(this)
+    $.ajax({
+      type: 'GET',
+      url: self.context.href
+    }).done(function(response){
+      self.after(response)
+    })
+  })
 
-    $(".char-count").html(charCount);
+  $('a#tweet-view').click(function(event){
+    event.preventDefault();
+    var self = $(this)
+    $.ajax({
+      type: 'GET',
+      url: self.context.href
+    }).done(function(response){
+      self.siblings('#show-tweet').remove();
+      self.after(response)
+    })
+  })
 
-    if (charCount > 140) {
-      textColor = "red";
-      buttonDisabled = true;
-    } else {
-      textColor = "black";
-      buttonDisabled = false;
-    }
 
-    $(".char-count").css("color", textColor);
-    $("input[type='submit']").prop("disabled", buttonDisabled);
-  });
 });
