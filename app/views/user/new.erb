@@ -1,0 +1,6 @@
+<h1>Register Below:</h1>
+<form method="post" action="/user">
+    <input type="text" name="user[twitter_handle]" placeholder="Enter twitter handle for funsies until this is legit" class="text-input"> <br>
+    <% if @user %><p id='error-message'><%= user_error_helper(@user, :twitter_handle) %></p><% end %>
+    <input type="submit" value="Create Account" id="comment-button">
+</form>

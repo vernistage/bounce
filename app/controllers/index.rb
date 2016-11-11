@@ -7,7 +7,7 @@ end
 
 get "/" do
   # this should return us our last 20 tweets
-  @tweets = $client.user_timeline.map { |tweet| tweet.text }
+  # @tweets = $client.user_timeline.map { |tweet| tweet.text }
   erb :index
 end
 

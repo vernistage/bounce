@@ -1,36 +1,31 @@
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
-  line-height: 120%;
-  /*background: #aaa;*/
-}
-
-p, div {
-  background-color: FFF;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
-  width: 500px;
-  border-bottom: 0 none;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
-  border-radius: 5px;
-}
-
-form {
-  margin: 0, auto;
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
   text-align: center;
-  width: 100%;
 }
 
-textarea {
-  width: 100%;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
-  resize: vertical;
+ul {
+  text-align: left;
 }
 
-input[type="submit"] {
-  width: 25%;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
+#item-edit-form {
+  display: inline-block;
+}
+
+#item-delete-form {
+  display: inline-block;
+}
+
+p#error-message {
+  color: red;
+}
+
+div.bidding {
+  text-align: left;
+}
+
+.row{
+  margin-top: 15px;
 }

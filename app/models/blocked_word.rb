@@ -1,6 +1,6 @@
 class BlockedWord < ActiveRecord::Base
-  has_many :user_words
-  has_many :users, through: :user_words
+  belongs_to :user
   belongs_to :tweet
 
+  validates :word, :user_id, presence: :true
 end
