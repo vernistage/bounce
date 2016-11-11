@@ -13,7 +13,7 @@
       <h1>Welcome to Bounce</h1>
           <a href="/">Home</a> |
           <% if current_user %>
-            welcome, <a class="item" href= "/user/<%= current_user_id %>"><%= current_user %>!</a>
+            welcome, <a class="item" href= "/user/<%= current_user_id %>">@<%= current_user %>!</a>
           <% else %>
             <a href="/new"> Register </a>
           <% end %>

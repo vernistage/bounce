@@ -12,7 +12,7 @@
   <h4>The following Twitter users were automatically muted by Bounce:</h4>
   <ul>
     <% @user.muted_accounts.each do |account| %>
-      <li>@<%= account.twitter_handle %> | see tweet</li>
+      <li>@<%= account.twitter_handle %> | <a href='/tweets/<%= account.tweet.id %>'>see tweet</a></li>
     <% end %>
   </ul>
 </div>
