@@ -1,19 +1,23 @@
-You blocked the following words:
+<h4>You blocked the following words:</h4>
 
-<ul>
-  <% @user.blocked_words.each do |word_object| %>
-    <li><%= word_object.word %></li>
-  <% end %>
-</ul>
-
-The following users were automatically muted by Bounce:
+<div id="blocked-words-list">
   <ul>
-    <% @user.muted_accounts.each do |account| %>
-      <li><% binding.pry %></li>
+    <% @user.blocked_words.each do |word_object| %>
+      <li><%= word_object.word %></li>
     <% end %>
   </ul>
+</div>
 
-Proceed to your mentions:
+<div id="muted-user-list">
+  <h4>The following Twitter users were automatically muted by Bounce:</h4>
+  <ul>
+    <% @user.muted_accounts.each do |account| %>
+      <li>@<%= account.twitter_handle %> | see tweet</li>
+    <% end %>
+  </ul>
+</div>
+
+<h4>Proceed to your mentions</h4>
 <a href='/statuses/mentions_timeline'><button type="button" class="btn btn-primary btn-lg btn-block">Twitter Time!</button></a>
 
-<p><em>Proceed to your direct messages: Coming Soon</em></p>
+<h4><em>Proceed to your direct messages: Coming Soon</em></h4>

@@ -17,13 +17,14 @@ get '/statuses/mentions_timeline' do
   $client.mentions.each do |tweet|
     @blocked_words.each do |word_object|
       if tweet.text.include?(word_object.word.downcase)
-        @account = MutedAccount.create_or_find_by!(twitter_handle: tweet.user.screen_name, twitter_account_id: tweet.user.id, user_id: current_user_id)
-        @offending_tweet = Tweet.create_or_find_by!(twitter_id: tweet.id, text: tweet.text, time_sent: tweet.created_at, muted_account_id: @account.id)
-        binding.pry
-        puts "blah"
+        account_to_mute = MutedAccount.find_or_create_by!(twitter_handle: tweet.user.screen_name, twitter_account_id: tweet.user.id, user_id: current_user_id)
+        offending_tweet = Tweet.find_or_create_by!(twitter_id: tweet.id, text: tweet.text, time_sent: tweet.created_at, muted_account_id: account_to_mute.id)
+        # account_to_mute.mute
       end
     end
   end
+
+  redirect "/user/#{current_user_id}"
 
 end
 
