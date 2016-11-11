@@ -3,6 +3,7 @@ class BlockedWords < ActiveRecord::Migration
      create_table :blocked_words do |t|
       t.string :word
       t.integer :tweet_id
+      t.integer :user_id
 
       t.timestamps(null: false)
     end

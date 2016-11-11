@@ -6,26 +6,21 @@ $client = Twitter::REST::Client.new do |config|
 end
 
 get "/" do
-  # this should return us our last 20 tweets
-  # @tweets = $client.user_timeline.map { |tweet| tweet.text }
+  @user = User.find_or_create_by!(twitter_handle: $client.user.screen_name)
+  session[:user] = @user.twitter_handle
   erb :index
-end
-
-post "/tweet" do
-  # this should send out a tweet
-  $client.update(params[:tweet])
-  redirect "/"
 end
 
 get '/statuses/mentions_timeline' do
   # Returns the 20 most recent mentions.
-  binding.pry
-  @blocked_words = Word.all
+  @blocked_words = BlockedWord.all
   $client.mentions.each do |tweet|
-    @blocked_words.each do |word|
-      if tweet.text.include?(word)
-        @user = tweet.user
-        @user.mute
+    @blocked_words.each do |word_object|
+      if tweet.text.include?(word_object.word.downcase)
+        @account = MutedAccount.create_or_find_by!(twitter_handle: tweet.user.screen_name, twitter_account_id: tweet.user.id, user_id: current_user_id)
+        @offending_tweet = Tweet.create_or_find_by!(twitter_id: tweet.id, text: tweet.text, time_sent: tweet.created_at, muted_account_id: @account.id)
+        binding.pry
+        puts "blah"
       end
     end
   end
