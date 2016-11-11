@@ -16,3 +16,11 @@ post '/words' do
     erb :'word/new'
   end
 end
+
+
+delete '/words/:id' do
+  @word = BlockedWord.find(params[:id])
+  @word.destroy
+  redirect "/user/:id"
+end
+
