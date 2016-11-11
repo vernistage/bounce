@@ -21,7 +21,8 @@
       <% @user.muted_accounts.each do |account| %>
         <li>
           <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-          @<%= account.twitter_handle %> | <a href='/tweets/<%= account.tweet.id %>' id='tweet-view'>see tweet</a>
+          <a target="_blank" href='https://twitter.com/<%= account.twitter_handle %>'>@<%= account.twitter_handle %></a> |
+          <a href='/tweets/<%= account.tweet.id %>' id='tweet-view'>see tweet</a>
         </li>
       <% end %>
     </ul>

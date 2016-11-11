@@ -1,4 +1,5 @@
 <div id="show-tweet">
   <p>"<%= @tweet.text %>"</p>
+  <p><%= Time.at(@tweet.time_sent).strftime("%B %e, %Y at %I:%M %p") %>
   <p><a href="">Unmute Account</a></p>
 </div>
