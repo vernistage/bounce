@@ -11,7 +11,10 @@ I coded this project in 24 hours and intended to continue the work. However, two
 
 ## Instructions
 The app automatically signs you into your Twitter account when you visit the home page.
+![Homepage View](../images/homepage.png)
 * Pull down the code and input your own Twitter access tokens and consumer keys.
 * Locally run the code and input blocked phrases or words, separated by commas.
+![Word Input View](../images/input.png)
 * Scan your mentions for those words, and blocked tweets and accounts section of your profile will auto-populate.
+![Profile Page View](../images/blocked.png)
 * **DON'T WORRY!** I removed and commented out the code that will *actually* mute those users.
