@@ -22,6 +22,7 @@ get '/statuses/mentions_timeline' do
         offending_tweet = Tweet.find_or_create_by!(twitter_id: tweet.id, text: tweet.text, time_sent: tweet.created_at, muted_account_id: account_to_mute.id)
         word_object.tweet_id = offending_tweet.id
         word_object.save
+        # code below will mute the account via Twitter.
         # account_to_mute.mute
       end
     end
