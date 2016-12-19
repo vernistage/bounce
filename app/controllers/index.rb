@@ -1,8 +1,8 @@
 $client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = "69iX0oPC3t8LKfXhyinjvVXHR"
-  config.consumer_secret     = "xdLQourOKXAILYDuqCsqUFhMtePnbjOSI2X3RSw5w1vFUuAqYs"
-  config.access_token        = "2282589380-jkqokozJh70LVPqJUvg4doT8OZ0oGFGukc9phpr"
-  config.access_token_secret = "QMYzLBm7nlSpsNuUHrPkGsPg3GeULQmfCS4jYKXSHhGw0"
+  config.consumer_key        = "[YOUR CONSUMER KEY HERE]"
+  config.consumer_secret     = "[YOUR CONSUMER SECRET HERE]"
+  config.access_token        = "[YOUR ACCESS TOKEN HERE]"
+  config.access_token_secret = "[YOUR SECRET ACCESS TOKEN HERE]"
 end
 
 get "/" do
@@ -30,5 +30,3 @@ get '/statuses/mentions_timeline' do
   redirect "/user/#{current_user_id}"
 
 end
-
-
