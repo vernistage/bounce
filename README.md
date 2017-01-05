@@ -17,4 +17,4 @@ The app automatically signs you into your Twitter account when you visit the hom
 ![Word Input View](readme-assets/input.png)
 * Scan your mentions for those words, and blocked tweets and accounts section of your profile will auto-populate.
 ![Profile Page View](readme-assets/blocked.png)
-* **DON'T WORRY!** I removed and commented out the code that will *actually* mute those users.
+* Code that will actually mute users is commented out.
